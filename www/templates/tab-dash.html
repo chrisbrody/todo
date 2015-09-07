@@ -1,0 +1,21 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <h1>Welcome {{name}} to your Task Manager</h1>
+    <h4>Top 5 Tasks</h4>
+    <div class="card" ng-repeat="x in tasks | limitTo: 5">
+      <div class="item item-checkbox">
+        <label class="checkbox">
+          <input type="checkbox" ng-click="remove(task)">
+        </label> 
+        {{x.taskName}} {{$index}}
+      </div>
+    </div>
+
+    <div class="card" ng-hide="tasks.length > 0">
+      <div class="item">
+        <h2>No More Tasks...</h2>
+      </div>
+    </div>
+    
+  </ion-content>
+</ion-view>
